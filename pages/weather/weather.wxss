@@ -1,0 +1,104 @@
+/* pages/weather/weather.wxss */
+.loading{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #c00;
+  z-index: 999;
+}
+.city {
+  text-align: center;
+  font-size: 38rpx;
+}
+
+.location {
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.thisTmp {
+  font-size: 178rpx;
+  text-align: center;
+  position: relative;
+}
+
+.cond_code {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 30rpx;
+  right: 220rpx;
+}
+
+.time {
+  text-align: center;
+  font-size: 24rpx;
+  margin: 22rpx 0;
+}
+
+.air {
+  display: flex;
+  flex-direction: row;
+  font-size: 26rpx;
+  justify-content: center;
+  margin-bottom:20rpx;
+}
+
+.humWater {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  margin-bottom: 260rpx;
+}
+
+.hum {
+  width: 50rpx;
+  height: 50rpx;
+}
+.more{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  background: #f1f1f1;
+  color: #333;
+}
+.moreDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.moreDiv>view{
+  text-align: center;
+  background: #ccc;
+  padding: 20rpx;
+}
+.moreDiv .time{
+  margin: 0;
+  font-size: 26rpx;
+}
+.moreDiv .cond{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.moreDiv .tem{
+  font-size: 26rpx;
+}
+.moreDiv .time{
+  font-size: 26rpx;
+}
+.moreDiv .water{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+}
+.moreDiv .wind{
+  font-size: 26rpx;
+}

@@ -1,0 +1,58 @@
+<!--pages/weather/weather.wxml-->
+<view wx:if="{{sts}}" class='loading'> </view>
+<view class='top'>
+  <view class='city'>
+    <text>{{parent_city}}</text>
+  </view>
+  <view class='location'>
+    <text>{{location}}</text>
+  </view>
+  <view class='thisTmp'>
+    <text class='tmp'>{{tmp}}°</text>
+    <image class='cond_code' src="{{cond_code}}"></image>
+    <!-- <view class='feel'>
+  <text>体感温度{{feel}}°</text>
+</view> -->
+  </view>
+  <view class='time'>
+    <text class='dataTime'>{{month}}/{{date}}</text>
+    <text class='week'>{{week}}</text>
+  </view>
+  <view class='air'>
+    <view>
+      <text class='cond_txt'>{{cond_txt}}|</text>
+    </view>
+    <view>
+      <text class='qlty'>空气质量{{qlty}}</text>
+    </view>
+  </view>
+  <view class='humWater'>
+    <text>相对湿度{{hum}}</text>
+    <image src="/images/cond-icon-heweather/399.png" class='hum'></image>
+  </view>
+</view>
+<view class='more' bindtap='jump'>
+  最近三天天气
+</view>
+<view class='moreDiv'>
+  <view wx:for="{{forecast}}" wx:key="index">
+    <view class='time'>
+      {{item.date}}
+    </view>
+    <view class='cond'>
+      <image src="/images/cond-icon-heweather/{{item.cond_code_d}}.png" class='hum'></image>
+      <text>-</text>
+      <image src="/images/cond-icon-heweather/{{item.cond_code_n}}.png" class='hum'></image>
+    </view>
+    <view class='tem'>
+      {{item.tmp_max}}°-{{item.tmp_min}}°
+    </view>
+    <view class='water'>
+      <text>相对湿度{{hum}}</text>
+      <image src="/images/cond-icon-heweather/399.png" class='hum'></image>
+    </view>
+    <view class='wind'>
+      {{item.wind_dir}}
+    </view>
+  </view>
+</view>
