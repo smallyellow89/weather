@@ -31,7 +31,7 @@
     <image src="/images/cond-icon-heweather/399.png" class='hum'></image>
   </view>
 </view>
-<view class='more' bindtap='jump'>
+<view class='more'>
   最近三天天气
 </view>
 <view class='moreDiv'>

@@ -1,0 +1,60 @@
+/* pages/city/city.wxss */
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30rpx;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #eaeaea;
+  padding: 10rpx;
+  width: 600rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.section image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.section input{
+  width: 100%;
+}
+.cancel {
+  margin-right: 10rpx;
+}
+.HotDiv{
+ margin-bottom: 20rpx; 
+}
+.hot{
+  margin-bottom: 20rpx;
+}
+.hotList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 700rpx;
+  margin: 0 auto;
+}
+
+.hotList view {
+  width: 220rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #eaeaea;
+  border-radius: 10rpx;
+  margin: 4rpx;
+}
+.searchList view{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx dashed #eaeaea;
+  padding-left: 10rpx
+}

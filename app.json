@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/weather/weather"
+    "pages/weather/weather",
+    "pages/city/city"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,6 +27,13 @@
         "text": "天气",
         "iconPath": "images/menu.png",
         "selectedIconPath": "images/selectMenu.png"
+      },
+      {
+        "color": "#ccc",
+        "pagePath": "pages/city/city",
+        "text": "城市",
+        "iconPath": "images/city.png",
+        "selectedIconPath": "images/selectCity.png"
       }
     ]
   }

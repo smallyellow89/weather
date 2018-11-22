@@ -96,14 +96,8 @@ Page({
       success(res) {
         console.log(res)
         _this.setData({ forecast: res.data.HeWeather6[0].daily_forecast });
-        setTimeout(function () { _this.setData({ sts: false })},500)
+        _this.setData({ sts: false })
       }
-    })
-  },
-  // 跳转
-  jump:function(){
-    wx.navigateTo({
-      url: '/pages/logs/logs'
     })
   },
   /**
