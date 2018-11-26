@@ -44,7 +44,7 @@ Page({
   },
   // 跳转
   jump: function() {
-    wx.switchTab({
+    wx.switchTab({  
       url: '/pages/weather/weather'
     })
   },
@@ -63,6 +63,16 @@ Page({
       });
     }
     this.getCityList();
+  },
+  selectCity:function(e){
+    var app=getApp();
+    var lat = e.currentTarget.dataset.lat;
+    var lon = e.currentTarget.dataset.lon;
+    app.globalData.lat = lat;
+    app.globalData.lon = lon;
+    wx.switchTab({
+      url: '/pages/weather/weather'
+    })
   },
   /**
    * 生命周期函数--监听页面加载

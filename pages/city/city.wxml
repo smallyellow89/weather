@@ -13,7 +13,7 @@
     <text>热门城市</text>
   </view>
   <view class='hotList'>
-    <view wx:for="{{hotList}}" wx:key="index">
+    <view wx:for="{{hotList}}" wx:key="index" bindtap='selectCity' data-lat="{{item.lat}}" data-lon="{{item.lon}}">
       {{item.location}}
     </view>
   </view>
@@ -23,7 +23,7 @@
     <text>搜索结果</text>
   </view>
   <view class='searchList'>
-    <view wx:for="{{searchList}}" wx:key="index">
+    <view wx:for="{{searchList}}" wx:key="index" bindtap='selectCity' data-lat="{{item.lat}}" data-lon="{{item.lon}}">
       {{item.cnty}}-{{item.admin_area}}-{{item.location}}
     </view>
   </view>
