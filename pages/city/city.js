@@ -70,7 +70,7 @@ Page({
     var lon = e.currentTarget.dataset.lon;
     app.globalData.lat = lat;
     app.globalData.lon = lon;
-    wx.switchTab({
+    wx.reLaunch({
       url: '/pages/weather/weather'
     })
   },

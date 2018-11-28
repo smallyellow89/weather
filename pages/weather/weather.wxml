@@ -1,8 +1,8 @@
 <!--pages/weather/weather.wxml-->
-<view wx:if="{{sts}}" class='loading'> </view>
+<!-- <view wx:if="{{sts}}" class='loading'> </view> -->
 <view class='top'>
   <view class='city'>
-    <text>{{parent_city}}</text>
+    <text bindtap='jump'>{{parent_city}}</text>
   </view>
   <view class='location'>
     <text>{{location}}</text>

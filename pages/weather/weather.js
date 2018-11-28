@@ -134,10 +134,16 @@ Page({
         _this.setData({
           forecast: res.data.HeWeather6[0].daily_forecast
         });
-        _this.setData({
-          sts: false
-        })
+        // _this.setData({
+        //   sts: false
+        // })
       }
+    })
+  },
+  // 跳转
+  jump:function(){
+    wx.navigateTo({
+      url: '/pages/city/city'
     })
   },
   /**
