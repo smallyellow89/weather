@@ -16,11 +16,14 @@ Page({
     cond_txt: '', //天气描述
     cond_code: '', //天气代码
     hum: '', //相对湿度
+    wind_sc: '', //风力
+    wind_dir: '', //风向
     week: '', //星期几
     month: '', //月份
     date: '', //日期
     qlty: '', //空气质量
-    forecast: [] //3天天气
+    forecast: [], //3天天气,
+    historyToday:''//历史上的今天
   },
   // 获取坐标
   getCity: function() {
@@ -64,7 +67,7 @@ Page({
         weekday[6] = "星期六"
 
         // console.log(weekday[d.getDay()]);
-        // console.log(d.getMonth()+1);
+        // console.log(d.getMonth()+1); 
         // console.log(d.getDate());
         // console.log(res);
         _this.setData({
@@ -87,6 +90,12 @@ Page({
         });
         _this.setData({
           cond_code: '/images/cond-icon-heweather/' + res.data.HeWeather6[0].now.cond_code + '.png'
+        });
+        _this.setData({
+          wind_dir: res.data.HeWeather6[0].now.wind_dir
+        });
+        _this.setData({
+          wind_sc: res.data.HeWeather6[0].now.wind_sc
         });
         _this.setData({
           hum: res.data.HeWeather6[0].now.hum
@@ -144,6 +153,16 @@ Page({
   jump:function(){
     wx.navigateTo({
       url: '/pages/city/city'
+    })
+  },
+  jump2:function(){
+    wx.navigateTo({
+      url: '/pages/history/history'
+    })
+  },
+  star: function () {
+    wx.navigateTo({
+      url: '/pages/star/star'
     })
   },
   /**

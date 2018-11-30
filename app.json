@@ -2,8 +2,9 @@
   "pages": [
     "pages/weather/weather",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/city/city"
+    "pages/city/city",
+    "pages/history/history",
+    "pages/star/star"
   ],
   "window": {
     "backgroundTextStyle": "light",

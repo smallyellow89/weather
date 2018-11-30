@@ -1,0 +1,15 @@
+<view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      请选择星座:{{array[index]}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+    <view class="picker">
+      请选择时间:{{array2[index2]}}
+    </view>
+  </picker>
+</view>
+<view class='searchBtn' bindtap='getStar'>点击查询</view>

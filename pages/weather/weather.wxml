@@ -1,5 +1,6 @@
 <!--pages/weather/weather.wxml-->
 <!-- <view wx:if="{{sts}}" class='loading'> </view> -->
+<view class='star' bindtap='star'>星座</view>
 <view class='top'>
   <view class='city'>
     <text bindtap='jump'>{{parent_city}}</text>
@@ -10,9 +11,6 @@
   <view class='thisTmp'>
     <text class='tmp'>{{tmp}}°</text>
     <image class='cond_code' src="{{cond_code}}"></image>
-    <!-- <view class='feel'>
-  <text>体感温度{{feel}}°</text>
-</view> -->
   </view>
   <view class='time'>
     <text class='dataTime'>{{month}}/{{date}}</text>
@@ -25,6 +23,16 @@
     <view>
       <text class='qlty'>空气质量{{qlty}}</text>
     </view>
+  </view>
+  <view>
+    {{wind_dir}}
+  </view>
+  <view>
+    {{wind_sc}}
+  </view>
+  <view>
+    <text bindtap='jump2'>历史上的今天</text>
+    <text bindtap='jump2'>{{historyToday}}</text>
   </view>
   <view class='humWater'>
     <text>相对湿度{{hum}}</text>

@@ -1,0 +1,7 @@
+<!--pages/history/history.wxml-->
+<view>
+  <view wx:for="{{list}}">
+    {{item.date}}
+    {{item.title}}
+  </view>
+</view>

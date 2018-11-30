@@ -5,7 +5,11 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    // 知晓云开始
+    require('./sdk-v1.10.1')
+    let clientID = 'cf154625074dc1ed654e'
+    wx.BaaS.init(clientID)
+    // 知晓云结束
     // 登录
     wx.login({
       success: res => {
