@@ -10,7 +10,17 @@ Page({
     index: 0,                                      
     index2: 0,
     starValue:'白羊座',
-    timeValue:'今天'
+    timeValue:'今天',
+    istoday:false,
+    istomorrow: false,
+    isweek: false,
+    ismonth: false,
+    isyear: false,
+    todayData:null,
+    tomorrowData:null,
+    weekData:null,
+    monthData:null,
+    yearData:null,
   },
   bindPickerChange: function (e) {
     this.setData({
@@ -19,7 +29,7 @@ Page({
     this.setData({
       starValue: this.data.array[parseInt(this.data.index)]
     })
-    console.log(this.data.starValue)
+    // console.log(this.data.starValue)
   },
   bindPickerChange2: function (e) {
     this.setData({
@@ -28,29 +38,83 @@ Page({
     this.setData({
       timeValue: this.data.array2[parseInt(this.data.index2)]
     })
-    console.log(this.data.timeValue)
+    // console.log(this.data.timeValue)
   },
   // 获取星座信息
   getStar: function () {
     let consName = this.data.starValue
     let type = this.data.timeValue
-
     if (type =='今天'){
       type = 'today'
+      consName = encodeURI(consName)
+      wx.BaaS.invokeFunction('getStar', { consName: consName, type: type }).then(res => {
+        // console.log(res.data)
+        this.setData({
+          todayData: res.data,
+          istoday: true,
+          istomorrow: false,
+          isweek: false,
+          ismonth: false,
+          isyear: false,
+        })
+      })
     } else if (type == '明天'){
       type = 'tomorrow'
+      consName = encodeURI(consName)
+      wx.BaaS.invokeFunction('getStar', { consName: consName, type: type }).then(res => {
+        // console.log(res.data)
+        this.setData({
+          tomorrowData: res.data,
+          istoday: false,
+          istomorrow: true,
+          isweek: false,
+          ismonth: false,
+          isyear: false,
+        })
+      })
     } else if (type == '本周'){
       type = 'week'
+      consName = encodeURI(consName)
+      wx.BaaS.invokeFunction('getStar', { consName: consName, type: type }).then(res => {
+        // console.log(res.data)
+        this.setData({
+          weekData: res.data,
+          istoday: false,
+          istomorrow: false,
+          isweek: true,
+          ismonth: false,
+          isyear: false,
+        })
+      })
     } else if (type == '本月'){
       type = 'month'
+      consName = encodeURI(consName)
+      wx.BaaS.invokeFunction('getStar', { consName: consName, type: type }).then(res => {
+        // console.log(res.data)
+        this.setData({
+          monthData: res.data,
+          istoday: false,
+          istomorrow: false,
+          isweek: false,
+          ismonth: true,
+          isyear: false,
+        })
+      })
     } else if (type == '本年'){
       type = 'year'
+      consName = encodeURI(consName)
+      wx.BaaS.invokeFunction('getStar', { consName: consName, type: type }).then(res => {
+        console.log(res.data)
+        this.setData({
+          yearData: res.data,
+          istoday: false,
+          istomorrow: false,
+          isweek: false,                                                                     
+          ismonth: false,
+          isyear: true,
+        })
+      })
     }
-    console.log(consName)
-    consName = encodeURI(consName)
-    wx.BaaS.invokeFunction('getStar', { consName: consName, type:type}).then(res => {
-      console.log(res.data)
-    })
   },
   /**
    * 生命周期函数--监听页面加载

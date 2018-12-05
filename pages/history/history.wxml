@@ -1,7 +1,7 @@
 <!--pages/history/history.wxml-->
 <view>
-  <view wx:for="{{list}}">
-    {{item.date}}
-    {{item.title}}
+  <view wx:for="{{list}}" wx:key="index">
+    <view>{{item.date}}</view>
+    <view>{{item.title}}</view>
   </view>
 </view>

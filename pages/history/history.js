@@ -14,7 +14,7 @@ Page({
     let day = date.getDate()
     let _this=this
     wx.BaaS.invokeFunction('historyToday', { month: month, day: day}).then(res => {
-      console.log(res.data.result) 
+      // console.log(res.data.result) 
       _this.setData({
         list: res.data.result
       });
