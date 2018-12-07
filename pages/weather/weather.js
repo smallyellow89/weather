@@ -22,8 +22,7 @@ Page({
     month: '', //月份
     date: '', //日期
     qlty: '', //空气质量
-    forecast: [], //3天天气,
-    historyToday:''//历史上的今天
+    forecast: [] //3天天气,
   },
   // 获取坐标
   getCity: function() {
@@ -42,7 +41,7 @@ Page({
           _this.getForecast(longitude, latitude)
         }
       })
-    }else{
+    } else {
       _this.getWeather(gloLon, gloLat)
       _this.getForecast(gloLon, gloLat)
     }
@@ -150,17 +149,17 @@ Page({
     })
   },
   // 跳转
-  jump:function(){
+  jump: function() {
     wx.navigateTo({
       url: '/pages/city/city'
     })
   },
-  jump2:function(){
+  jump2: function() {
     wx.navigateTo({
       url: '/pages/history/history'
     })
   },
-  star: function () {
+  star: function() {
     wx.navigateTo({
       url: '/pages/star/star'
     })
@@ -169,7 +168,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+
   },
 
   /**

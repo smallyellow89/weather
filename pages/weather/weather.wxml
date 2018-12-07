@@ -1,66 +1,75 @@
 <!--pages/weather/weather.wxml-->
 <!-- <view wx:if="{{sts}}" class='loading'> </view> -->
-<view class='star' bindtap='star'>星座</view>
-<view class='top'>
-  <view class='city'>
-    <text bindtap='jump'>{{parent_city}}</text>
+<view class='weather'>
+  <view class='star' bindtap='star'>
+    <image src="http://119.36.240.34:18090/images/star.png"></image>
   </view>
-  <view class='location'>
-    <text>{{location}}</text>
-  </view>
-  <view class='thisTmp'>
-    <text class='tmp'>{{tmp}}°</text>
-    <image class='cond_code' src="{{cond_code}}"></image>
-  </view>
-  <view class='time'>
-    <text class='dataTime'>{{month}}/{{date}}</text>
-    <text class='week'>{{week}}</text>
-  </view>
-  <view class='air'>
-    <view>
-      <text class='cond_txt'>{{cond_txt}}|</text>
+  <view class='top'>
+    <view class='city'>
+      <text bindtap='jump'>{{parent_city}}</text>
+      <image src='/images/down.png'></image>
     </view>
-    <view>
-      <text class='qlty'>空气质量{{qlty}}</text>
+    <!-- <view class='location'>
+      <text>{{location}}</text>
+    </view> -->
+    <view class='thisTmp'>
+      <text class='tmp'>{{tmp}}°</text>
+      <text class='cond_txt'>{{cond_txt}}</text>
+      <!-- <image class='cond_code' src="{{cond_code}}"></image> -->
     </view>
-  </view>
-  <view>
-    {{wind_dir}}
-  </view>
-  <view>
-    {{wind_sc}}
-  </view>
-  <view>
-    <text bindtap='jump2'>历史上的今天</text>
-    <text bindtap='jump2'>{{historyToday}}</text>
-  </view>
-  <view class='humWater'>
-    <text>相对湿度{{hum}}</text>
-    <image src="/images/cond-icon-heweather/399.png" class='hum'></image>
-  </view>
-</view>
-<view class='more'>
-  最近三天天气
-</view>
-<view class='moreDiv'>
-  <view wx:for="{{forecast}}" wx:key="index">
     <view class='time'>
-      {{item.date}}
+      <text class='dataTime'>{{month}}/{{date}}</text>
+      <text class='week'>{{week}}</text>
     </view>
-    <view class='cond'>
-      <image src="/images/cond-icon-heweather/{{item.cond_code_d}}.png" class='hum'></image>
-      <text>-</text>
-      <image src="/images/cond-icon-heweather/{{item.cond_code_n}}.png" class='hum'></image>
+    <view class='weatherNum'>
+      <view>
+        <view>
+          {{hum}}
+        </view>
+        <view class='weatherNumTxt'>
+          相对湿度
+        </view>
+      </view>
+      <view>
+        <view>{{qlty}}</view>
+        <view class='weatherNumTxt'>
+          空气质量
+        </view>
+      </view>
+      <view>
+        <view>
+          {{wind_sc}}
+        </view>
+        <view class='weatherNumTxt'>
+          {{wind_dir}}
+        </view>
+      </view>
     </view>
-    <view class='tem'>
-      {{item.tmp_max}}°-{{item.tmp_min}}°
+    <view class='historyLink'>
+    <image src='http://119.36.240.34:18090/images/date.png'></image>
+      <text bindtap='jump2'>历史上的今天</text>
     </view>
-    <view class='water'>
-      <text>相对湿度{{hum}}</text>
-      <image src="/images/cond-icon-heweather/399.png" class='hum'></image>
-    </view>
-    <view class='wind'>
-      {{item.wind_dir}}
+  </view>
+  <view class='moreDiv'>
+    <view wx:for="{{forecast}}" wx:key="index">
+      <view class='time'>
+        {{item.date}}
+      </view>
+      <view class='cond'>
+        <image src="/images/cond-icon-heweather/{{item.cond_code_d}}.png" class='hum'></image>
+        <text>-</text>
+        <image src="/images/cond-icon-heweather/{{item.cond_code_n}}.png" class='hum'></image>
+      </view>
+      <view class='tem'>
+        {{item.tmp_max}}°-{{item.tmp_min}}°
+      </view>
+      <view class='water'>
+        <text>相对湿度{{hum}}</text>
+        <image src="/images/cond-icon-heweather/399.png" class='hum'></image>
+      </view>
+      <view class='wind'>
+        {{item.wind_dir}}
+      </view>
     </view>
   </view>
 </view>
