@@ -1,6 +1,6 @@
 <!--pages/weather/weather.wxml-->
 <!-- <view wx:if="{{sts}}" class='loading'> </view> -->
-<view class='weather'>
+<view class="{{sun?'day':'night'}}">
   <view class='star' bindtap='star'>
     <image src="http://119.36.240.34:18090/images/star.png"></image>
   </view>
@@ -46,7 +46,7 @@
       </view>
     </view>
     <view class='historyLink'>
-    <image src='http://119.36.240.34:18090/images/date.png'></image>
+      <image src='http://119.36.240.34:18090/images/date.png'></image>
       <text bindtap='jump2'>历史上的今天</text>
     </view>
   </view>
@@ -55,21 +55,15 @@
       <view class='time'>
         {{item.date}}
       </view>
+      <view class='tem'>
+        <view>↑{{item.tmp_max}}°</view>↓{{item.tmp_min}}°
+      </view>
       <view class='cond'>
         <image src="/images/cond-icon-heweather/{{item.cond_code_d}}.png" class='hum'></image>
         <text>-</text>
         <image src="/images/cond-icon-heweather/{{item.cond_code_n}}.png" class='hum'></image>
       </view>
-      <view class='tem'>
-        {{item.tmp_max}}°-{{item.tmp_min}}°
-      </view>
-      <view class='water'>
-        <text>相对湿度{{hum}}</text>
-        <image src="/images/cond-icon-heweather/399.png" class='hum'></image>
-      </view>
-      <view class='wind'>
-        {{item.wind_dir}}
-      </view>
+
     </view>
   </view>
 </view>

@@ -8,8 +8,12 @@
   background: #c00;
   z-index: 999;
 }
-.weather{
+.day{
   background: url('http://119.36.240.34:18090/images/day.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+.night{
+  background: url('http://119.36.240.34:18090/images/night.jpg') no-repeat;
   background-size: 100% 100%;
 }
 .city {
@@ -82,22 +86,30 @@
 .historyLink{
   font-size: 32rpx;
   color: #fff;
-  margin-bottom: 300rpx;
-  text-align: center;
+  margin-bottom: 220rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.historyLink image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 26rpx;
 }
 .moreDiv{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  color: #333;
 }
 .moreDiv>view{
-  text-align: center;
-  background: #ccc;
-  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
 }
 .moreDiv .time{
-  margin: 0;
-  font-size: 26rpx;
+  margin-right: 120rpx;
+  font-size: 36rpx;
+   color: #333;
 }
 .moreDiv .cond{
   display: flex;
@@ -106,18 +118,10 @@
   justify-content: center;
 }
 .moreDiv .tem{
-  font-size: 26rpx;
-}
-.moreDiv .time{
-  font-size: 26rpx;
-}
-.moreDiv .water{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: 26rpx;
+  width: 200rpx;
 }
-.moreDiv .wind{
-  font-size: 26rpx;
+.moreDiv .tem view{
+  margin-right: 30rpx;
 }

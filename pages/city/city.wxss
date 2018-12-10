@@ -34,6 +34,9 @@
 }
 .hot{
   margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .hotList {
   display: flex;
@@ -57,4 +60,16 @@
   line-height: 80rpx;
   border-bottom: 1rpx dashed #eaeaea;
   padding-left: 10rpx
+}
+.title{
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.dot{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  margin: 0 20rpx 0;
+  background: #FF9866;
 }

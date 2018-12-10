@@ -1,167 +1,254 @@
-<view class="section">
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
-      请选择星座:{{array[index]}}
+<view class='top'>
+  <image src='http://119.36.240.34:18090/images/starPic.jpg' class='left'></image>
+  <view class='right'>
+    <view class="section">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          请选择星座>{{array[index]}}
+        </view>
+      </picker>
     </view>
-  </picker>
-</view>
-<view class="section">
-  <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
-    <view class="picker">
-      请选择时间:{{array2[index2]}}
+    <view class="section">
+      <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+        <view class="picker">
+          请选择时间>{{array2[index2]}}
+        </view>
+      </picker>
     </view>
-  </picker>
+    <view class='searchBtn' bindtap='getStar'>点击查询</view>
+  </view>
 </view>
-<view class='searchBtn' bindtap='getStar'>点击查询</view>
 <view wx:if="{{istoday}}">
-  <view>
-    星座名称:
-    <text>{{todayData.name}}</text>
+  <view class='title'>
+    <view class='dot'></view>
+    <view>
+      {{todayData.name}}
+      <text>(速配星座{{todayData.QFriend}}座)</text>
+    </view>
   </view>
-  <view>
-    速配星座:
-    <text>{{todayData.QFriend}}</text>
+  <view class='list'>
+    <view class='info'>
+      幸运颜色:
+      <text>{{todayData.color}}</text>
+    </view>
+    <view class='info'>
+      健康指数:
+      <text>{{todayData.health}}</text>
+    </view>
+    <view class='info'>
+      爱情指数:
+      <text>{{todayData.love}}</text>
+    </view>
+    <view class='info'>
+      财运指数:
+      <text>{{todayData.money}}</text>
+    </view>
+    <view class='info'>
+      工作指数:
+      <text>{{todayData.work}}</text>
+    </view>
+    <view class='info'>
+      幸运数字:
+      <text>{{todayData.number}}</text>
+    </view>
   </view>
-  <view>
-    幸运颜色:
-    <text>{{todayData.color}}</text>
+  <view class='title'>
+    <view class='dot'></view>
+    <view>
+      运势概述:
+    </view>
   </view>
-  <view>
-    健康指数:
-    <text>{{todayData.health}}</text>
-  </view>
-  <view>
-    爱情指数:
-    <text>{{todayData.love}}</text>
-  </view>
-  <view>
-    财运指数:
-    <text>{{todayData.money}}</text>
-  </view>
-  <view>
-    工作指数:
-    <text>{{todayData.work}}</text>
-  </view>
-  <view>
-    幸运数字:
-    <text>{{todayData.number}}</text>
-  </view>
-  <view>
-    运势概述:
+  <view class='summary'>
     <text>{{todayData.summary}}</text>
   </view>
 </view>
 <view wx:if="{{istomorrow}}">
-  <view>
-    星座名称:
-    <text>{{tomorrowData.name}}</text>
+  <view class='title'>
+    <view class='dot'></view>
+    <view>
+      {{tomorrowData.name}}
+      <text>(速配星座{{tomorrowData.QFriend}}座)</text>
+    </view>
   </view>
-  <view>
-    速配星座:
-    <text>{{tomorrowData.QFriend}}座</text>
+  <view class='list'>
+    <view class='info'>
+      幸运颜色:
+      <text>{{tomorrowData.color}}</text>
+    </view>
+    <view class='info'>
+      健康指数:
+      <text>{{tomorrowData.health}}</text>
+    </view>
+    <view class='info'>
+      爱情指数:
+      <text>{{tomorrowData.love}}</text>
+    </view>
+    <view class='info'>
+      财运指数:
+      <text>{{tomorrowData.money}}</text>
+    </view>
+    <view class='info'>
+      工作指数:
+      <text>{{tomorrowData.work}}</text>
+    </view>
+    <view class='info'>
+      幸运数字:
+      <text>{{tomorrowData.number}}</text>
+    </view>
   </view>
-  <view>
-    幸运颜色:
-    <text>{{tomorrowData.color}}</text>
+  <view class='title'>
+    <view class='dot'></view>
+    <view>
+      运势概述:
+    </view>
   </view>
-  <view>
-    健康指数:
-    <text>{{tomorrowData.health}}</text>
-  </view>
-  <view>
-    爱情指数:
-    <text>{{tomorrowData.love}}</text>
-  </view>
-  <view>
-    财运指数:
-    <text>{{tomorrowData.money}}</text>
-  </view>
-  <view>
-    工作指数:
-    <text>{{tomorrowData.work}}</text>
-  </view>
-  <view>
-    幸运数字:
-    <text>{{tomorrowData.number}}</text>
-  </view>
-  <view>
-    运势概述:
+  <view class='summary'>
     <text>{{tomorrowData.summary}}</text>
   </view>
 </view>
 <view wx:if="{{isweek}}">
-  <view>
+  <view class='title'>
+    <view class='dot'></view>
     <view>
-      时间区间:
+      {{weekData.name}}
     </view>
-    <text>{{weekData.date}}</text>
   </view>
-  <view>
-    {{weekData.love}}
+  <view class='love'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        恋爱
+      </view>
+    </view>
+    <view class='info2'>
+      {{weekData.love}}
+    </view>
   </view>
-  <view>
-    {{weekData.money}}
+  <view class='money'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        财运
+      </view>
+    </view>
+    <view class='info2'>
+      {{weekData.money}}
+    </view>
   </view>
-  <view>
-    {{weekData.work}}
+  <view class='work'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        工作
+      </view>
+    </view>
+    <view class='info2'>
+      {{weekData.work}}
+    </view>
   </view>
 </view>
 <view wx:if="{{ismonth}}">
-  <view>
+  <view class='title'>
+    <view class='dot'></view>
     <view>
-      月份:
+      {{monthData.name}}
     </view>
-    <text>{{monthData.date}}</text>
   </view>
-  <view>
-    <view>
-      感情:
+  <view class='love'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        恋爱
+      </view>
     </view>
-    <text>{{monthData.love}}</text>
+    <view class='info2'>
+      {{monthData.love}}
+    </view>
   </view>
-  <view>
-    <view>
-      财运:
+  <view class='money'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        财运
+      </view>
     </view>
-    <text>{{monthData.money}}</text>
+    <view class='info2'>
+      {{monthData.money}}
+    </view>
   </view>
-  <view>
-    <view>
-      工作:
+  <view class='work'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        工作
+      </view>
     </view>
-    <text>{{monthData.work}}</text>
+    <view class='info2'>
+      {{monthData.work}}
+    </view>
   </view>
 </view>
 <view wx:if="{{isyear}}">
-  <view>
+  <view class='title'>
+    <view class='dot'></view>
     <view>
-      事业:
+      {{yearData.name}}
     </view>
-    <text>{{yearData.career[0]}}</text>
   </view>
-  <view>
-    <view>
-      财运:
+  <view class='career'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        事业
+      </view>
     </view>
-    <text>{{yearData.finance[0]}}</text>
+    <view class='info2'>
+      {{yearData.career[0]}}
+    </view>
   </view>
-  <view>
-    <view>
-      健康:
+  <view class='finance'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        财运
+      </view>
     </view>
-    <text>{{yearData.health[0]}}</text>
+    <view class='info2'>
+      {{yearData.finance[0]}}
+    </view>
   </view>
-  <view>
-    <view>
-      感情:
+  <view class='health'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        健康
+      </view>
     </view>
-    <text>{{yearData.love[0]}}</text>
+    <view class='info2'>
+      {{yearData.health[0]}}
+    </view>
   </view>
-  <view>
-    <view>
-      总结:
+  <view class='love'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        感情
+      </view>
     </view>
-    <view>{{yearData.mima.info}}</view>
-    <view>{{yearData.mima.text}}</view>
+    <view class='info2'>
+      {{yearData.love[0]}}
+    </view>
+  </view>
+  <view class='all'>
+    <view class='title2'>
+      <view class='dot2'></view>
+      <view>
+        总结
+      </view>
+    </view>
+    <view class='info2'>
+      <view>{{yearData.mima.info}}</view>
+      <view>{{yearData.mima.text}}</view>
+    </view>
   </view>
 </view>

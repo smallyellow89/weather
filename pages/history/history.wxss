@@ -1,1 +1,40 @@
 /* pages/history/history.wxss */
+
+.img {
+  width: 750rpx;
+  height: 604rpx;
+}
+
+.title {
+  font-size: 28rpx;
+  color: #9e9e9e;
+  margin-top: -120rpx;
+  margin-bottom: 80rpx;
+}
+
+.list {
+  color: #484848;
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.left {
+  padding-right: 20rpx;
+  border-right: 1rpx solid #ccc;
+  margin-right: 20rpx;
+  width: 240rpx;
+  padding-bottom: 80rpx;
+  flex-shrink:0;
+}
+
+.dot{
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  background: #FF9866;
+  position: absolute;
+  top: 10rpx;
+  left: 252rpx;
+}

@@ -4,13 +4,11 @@
     <image src="/images/search.png"></image>
     <input bindinput="bindKeyInput" placeholder="请输入城市名" />
   </view>
-  <view class='cancel' bindtap='jump'>
-    <text>取消</text>
-  </view>
 </view>
 <view class='HotDiv' wx:if="{{sts}}">
   <view class='hot'>
-    <text>热门城市</text>
+    <view class='dot'></view>
+    <text class='title'>热门城市</text>
   </view>
   <view class='hotList'>
     <view wx:for="{{hotList}}" wx:key="index" bindtap='selectCity' data-lat="{{item.lat}}" data-lon="{{item.lon}}">
@@ -20,7 +18,8 @@
 </view>
 <view class='searchDiv'>
   <view class='hot'>
-    <text>搜索结果</text>
+    <view class='dot'></view>
+    <text class='title'>搜索结果</text>
   </view>
   <view class='searchList'>
     <view wx:for="{{searchList}}" wx:key="index" bindtap='selectCity' data-lat="{{item.lat}}" data-lon="{{item.lon}}">

@@ -22,7 +22,8 @@ Page({
     month: '', //月份
     date: '', //日期
     qlty: '', //空气质量
-    forecast: [] //3天天气,
+    forecast: [], //3天天气,
+    sun:true
   },
   // 获取坐标
   getCity: function() {
@@ -57,6 +58,12 @@ Page({
       success(res) {
         let d = new Date();
         let weekday = new Array(7)
+        let hour = d.getHours();  
+        if(hour>=17){
+          _this.setData({
+            sun:false
+          })
+        }
         weekday[0] = "星期天"
         weekday[1] = "星期一"
         weekday[2] = "星期二"

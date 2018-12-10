@@ -42,12 +42,6 @@ Page({
       }
     })
   },
-  // 跳转
-  jump: function() {
-    wx.switchTab({  
-      url: '/pages/weather/weather'
-    })
-  },
   // 绑定数据
   bindKeyInput: function(e) {
     this.setData({

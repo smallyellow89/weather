@@ -1,7 +1,10 @@
 <!--pages/history/history.wxml-->
 <view>
-  <view wx:for="{{list}}" wx:key="index">
-    <view>{{item.date}}</view>
-    <view>{{item.title}}</view>
+  <image src='http://119.36.240.34:18090/images/history.jpg' class='img'></image>
+  <view class='title'>历史上的{{month}}月{{day}}日</view>
+  <view wx:for="{{list}}" wx:key="index" class='list' wx:if="{{index<5}}">
+    <view class='left'>{{item.date}}</view>
+    <view class='dot'></view>
+    <view class='right'>{{item.title}}</view>
   </view>
 </view>
